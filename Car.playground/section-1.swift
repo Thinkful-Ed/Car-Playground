@@ -13,7 +13,7 @@ class Car {
     
     // These are the properies of a Car object. Each Car will have these properies.
     
-    var name: String? // Each car *might* have a name. However, it might not. That's why we have a questionmark to make it an Optional.
+    var name: String? // Each Car *might* have a name. However, it might not. That's why we have a questionmark to make it an Optional.
     var color: UIColor
     let isAutomatic: Bool
     let horsepower: Int
@@ -28,10 +28,10 @@ class Car {
         self.isAutomatic = isAutomatic
         self.horsepower = horsepower
         self.description = description
-        self.isDriving = false // When a car is first created, it is not moving.
+        isDriving = false // When a Car is first created, it is not moving.
     }
     
-    // This is a method called "go". The idea is that the car would start driving now.
+    // This is a method called "go". The idea is that the Car would start driving now.
     
     func go() {
         if isDriving == false {
@@ -42,7 +42,7 @@ class Car {
         }
     }
     
-    // Simarly, a method to stop the car.
+    // Similarly, a method to stop the Car.
     
     func stop() {
         if isDriving == true {
@@ -60,35 +60,35 @@ let reallyDarkRed = UIColor(red: 0.2, green: 0.05, blue: 0.03, alpha: 1.0)
 
 // Similarly, we can create a new car like this:
 
-let car = Car(name: "Cannonball Express", color: reallyDarkRed, isAutomatic: false, horsepower: 150, description: "This car is named after Casey Jones's train.")
+let myCar = Car(name: "Cannonball Express", color: reallyDarkRed, isAutomatic: false, horsepower: 150, description: "This car is named after Casey Jones's train.")
 
 // Since this is a playground, we can see the value of a property like this:
 
-car.description
+myCar.description
 
-// Let's tell the car to start driving:
+// Let's tell the Car to start driving:
 
-car.go()
+myCar.go()
 
-// Let's be annoying and tell the car we want it to go again:
+// Let's be annoying and tell the Car we want it to go again:
 
-car.go()
+myCar.go()
 
 // Ok, let's stop:
 
-car.stop()
+myCar.stop()
 
-//car.stop()
+//myCar.stop()
 
-/* Feel free to uncomment or comment-out any of the Car objects or method calls in this file to see how it changes in the console output. To see the console output in a Playground select View->Assistant Editor->Show Assistant Edior. */
+/* Feel free to uncomment or comment-out any of the Car objects or method calls in this file to see how it changes the console output. To see the console output in a Playground select View->Assistant Editor->Show Assistant Edior. The shortcut is command+option+return. */
 
-// Try creating another car. Just type "let anotherCar = Car(" and you'll see all the parameter names in Xcode. You can press tab to move on to the next parameter.
+// Try creating another Car. Just type "let anotherCar = Car(" and you'll see all the parameter names in Xcode. You can press tab to move to the next parameter.
 
-// Let's make a subclass of Car. The HybridCar will have all the features and functionality of a regular Car, but it can also do things that a regular car cannot.
+// Let's make a subclass of Car. The HybridCar will have all the features and functionality of a regular Car, but it can also do things that a regular Car cannot.
 
 class HybridCar: Car {
     func printEnergyInfo() {
-        println("Energy conservation is going swell.") // This car should now print out info about the enviroment and energy consumption.
+        println("Energy conservation is going swell.") // The HybridCar should now print out info about the enviroment and energy consumption.
     }
 }
 
@@ -96,6 +96,9 @@ class HybridCar: Car {
 
 let white = UIColor.whiteColor()
 let myHybridCar = HybridCar(name: "Prius", color: white, isAutomatic: true, horsepower: 134, description: "Save the planet, bro.")
+
+// We can tell it to "go" because it has all functionality of a Car object:
+//myHybridCar.go()
 
 // We can tell our car to print out the energy info like this:
 //myHybridCar.printEnergyInfo()
@@ -107,12 +110,12 @@ class Lowrider: Car {
     var isBouncing: Bool
     
     override init(name: String?, color: UIColor, isAutomatic: Bool, horsepower: Int, description: String?) {
-        isBouncing = false
-        super.init(name: name, color: color, isAutomatic: isAutomatic, horsepower: horsepower, description: description)
-        if name == nil { // If there is no "name" passed in as an argument then we'll name it "Lowrider"
+        isBouncing = false // When a Lowrider is first created, it is not bouncing.
+        super.init(name: name, color: color, isAutomatic: isAutomatic, horsepower: horsepower, description: description) // We call "super" so that the Car's init function rus as usual.
+        if name == nil { // If there was no "name" passed in as an argument then we'll name it "Lowrider".
             self.name = "Lowrider"
         }
-        if self.description == nil { // If there is no "description" passed in as an argument then we'll fill it in with info about the car.
+        if self.description == nil { // If there was no "description" passed in as an argument then we'll fill it in with info about the car.
             self.description = "A lowrider is a customized car originated by Mexican Americans in Southern California. Many lowriders have hydraulic suspension systems (modified suspension) so that their ride can change height at the flip of a switch."
         }
     }
@@ -153,11 +156,11 @@ class Slab: Car {
     
     override init(name: String?, color: UIColor, isAutomatic: Bool, horsepower: Int, description: String?) {
         isPlayingMusic = false
-        super.init(name: name, color: color, isAutomatic: isAutomatic, horsepower: horsepower, description: description)
-        if name == nil { // If there is no "name" passed in as an argument then we'll name it "Slab"
+        super.init(name: name, color: color, isAutomatic: isAutomatic, horsepower: horsepower, description: description) // We call "super" so that the Car's init function rus as usual.
+        if name == nil { // If there was no "name" passed in as an argument then we'll name it "Slab"
             self.name = "Slab"
         }
-        if description == nil { // If there is no "description" passed in as an argument then we'll fill it in with info about the car.
+        if description == nil { // If there was no "description" passed in as an argument then we'll fill it in with info about the car.
             self.description = "Slab stands for Slow Low And Bangin'. Originatng in the Texas hip-hop community, these cars typically have sound systems with a subwoofer which is ideal for hearing loud bass in hip-hop music."
         }
     }
