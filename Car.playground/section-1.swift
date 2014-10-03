@@ -111,7 +111,7 @@ class Lowrider: Car {
     
     override init(name: String?, color: UIColor, isAutomatic: Bool, horsepower: Int, description: String?) {
         isBouncing = false // When a Lowrider is first created, it is not bouncing.
-        super.init(name: name, color: color, isAutomatic: isAutomatic, horsepower: horsepower, description: description) // We call "super" so that the Car's init function rus as usual.
+        super.init(name: name, color: color, isAutomatic: isAutomatic, horsepower: horsepower, description: description) // We call "super" so that the Car's init function runs as usual.
         if name == nil { // If there was no "name" passed in as an argument then we'll name it "Lowrider".
             self.name = "Lowrider"
         }
@@ -156,7 +156,7 @@ class Slab: Car {
     
     override init(name: String?, color: UIColor, isAutomatic: Bool, horsepower: Int, description: String?) {
         isPlayingMusic = false
-        super.init(name: name, color: color, isAutomatic: isAutomatic, horsepower: horsepower, description: description) // We call "super" so that the Car's init function rus as usual.
+        super.init(name: name, color: color, isAutomatic: isAutomatic, horsepower: horsepower, description: description) // We call "super" so that the Car's init function runs as usual.
         if name == nil { // If there was no "name" passed in as an argument then we'll name it "Slab"
             self.name = "Slab"
         }
