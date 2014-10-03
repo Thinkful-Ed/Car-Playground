@@ -161,7 +161,7 @@ class Slab: Car {
             self.name = "Slab"
         }
         if description == nil { // If there was no "description" passed in as an argument then we'll fill it in with info about the car.
-            self.description = "Slab stands for Slow Low And Bangin'. Originatng in the Texas hip-hop community, these cars typically have sound systems with a subwoofer which is ideal for hearing loud bass in hip-hop music."
+            self.description = "Slab stands for Slow Low And Bangin'. Originating in the Texas hip-hop community, these cars typically have sound systems with a subwoofer which is ideal for hearing loud bass in hip-hop music."
         }
     }
     
